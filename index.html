@@ -67,6 +67,30 @@
         rel="stylesheet"
         href="assets/css/styles.css">
 
+    <style>
+        .responsive-inline-frame {
+            max-width: 800px;
+            /* 800x450 (16x9 aspect ratio) */
+            margin: auto;
+        }
+
+        .responsive-inline-frame-inner {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%;
+            height: 0;
+        }
+
+        .responsive-inline-frame-inner iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
 </head>
 
 <body>

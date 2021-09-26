@@ -32,13 +32,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700'
         rel='stylesheet'
         type='text/css'>
-    <style>
-        table,
-        th,
-        td {
-            border: 2px solid;
-        }
-    </style>
+
 
     <!-- FontAwesome JS -->
     <script defer
@@ -73,6 +67,12 @@
     <link id="theme-style"
         rel="stylesheet"
         href="assets/css/styles.css">
+    <style>
+        .scroll {
+            overflow: scroll;
+            height: 80px;
+        }
+    </style>
 
     <title>Self Stock Analysis</title>
 </head>
@@ -128,47 +128,49 @@
     </header>
     <!--//header-->
     <section class="experience section">
-    <div class="container sections-wrapper py-5">
-        <section class="latest section">
-            <div class="section-inner shadow-sm rounded">
-                <h2 class="heading">Search Stocks</h2>
-                <div class="content">
+        <div class="container sections-wrapper py-5">
+            <section class="latest section">
+                <div class="section-inner shadow-sm rounded">
+                    <h2 class="heading">Search Stocks</h2>
+                    <div class="content">
 
-                    <div class="item featured text-center">
-                        <div class="content"><input type="text"
-                                class="form-control col-lg-8"
-                                placeholder="Search"
-                                id="srchstr"></div>
-                        <br>
-                        <div class="content"><button type="button"
-                                class="btn btn-primary btn-lg"
-                                id ="srchbtn"
-                                onclick="searchStock()">Search Stocks</button></div>
-                    </div>
-                    <div class="item featured text-center">
-                        <div class="row align-items-center">
-                            <table id="records_table"
-                                width=100%>
-                                <tr>
-                                    <th>Symbol</th>
-                                    <th>Name</th>
-                                    <th>Type</th>
-                                    <th>Region</th>
-                                    <th>Currency</th>
-                                </tr>
-                            </table>
+                        <div class="item featured text-center">
+                            <div class="content"><input type="text"
+                                    class="form-control col-lg-8"
+                                    placeholder="Search"
+                                    id="srchstr"></div>
+                            <br>
+                            <div class="content"><button type="button"
+                                    class="btn btn-primary btn-lg"
+                                    id="srchbtn"
+                                    onclick="searchStock()">Search Stocks</button></div>
+                        </div>
+                        <div class="item featured text-center">
+                            <div class="row align-items-center">
+                                <table id="records_table"
+                                    width=100%
+                                    class="scroll">
+                                    <tr>
+                                        <th>Symbol</th>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Region</th>
+                                        <th>Currency</th>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div>
-                </header>
+                    </header>
             </section>
             <section class="experience section">
-                <div class="container sections-wrapper py-5" id="daily">
+                <div class="container sections-wrapper py-5"
+                    id="daily">
                     <section class="latest section">
                         <div class="section-inner shadow-sm rounded">
                             <h2 class="heading">Daily Price</h2>
                             <div class="content">
-            
+
                                 <div class="item featured text-center">
                                     <div class="content"><input type="text"
                                             class="form-control col-lg-8"
@@ -177,14 +179,16 @@
                                     <br>
                                     <div class="content"><button type="button"
                                             class="btn btn-primary btn-lg"
-                                            id ="srchbtn2"
+                                            id="srchbtn2"
                                             onclick="getDailyStockPrice()">Search Stocks</button></div>
                                 </div>
                                 <div class="item featured text-center">
-                                    <div class="row align-items-center">
-                                        <button class="btn btn-primary btn-sm" id="sortdata">Sort by date</button>
+                                    <div class="row align-items-center" style="overflow-x:auto;overflow-y:auto;">
+                                        <button class="btn btn-primary btn-sm"
+                                            id="sortdata">Sort by date</button>
                                         <table id="daily_price_table"
-                                            width=100%>
+                                            width=100%
+                                            class="scrollit">
                                             <tr>
                                                 <th>Symbol</th>
                                                 <th>Date</th>
@@ -200,33 +204,33 @@
                                 </div>
                             </div>
                             </header>
-                        </section>
-                            
-                <script type="text/javascript"
-                    src="assets/plugins/popper.min.js"></script>
-                <script type="text/javascript"
-                    src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-                <script type="text/javascript"
-                    src="assets/plugins/vanilla-rss/dist/rss.global.min.js"></script>
-                <script type="text/javascript"
-                    src="assets/plugins/dark-mode-switch/dark-mode-switch.min.js"></script>
-                <!-- github calendar plugin -->
-                <script type="text/javascript"
-                    src="assets/plugins/github-calendar/dist/github-calendar.min.js"></script>
-                <!-- github activity plugin -->
-                <script type="text/javascript"
-                    src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
-                <script type="text/javascript"
-                    src="assets/plugins/github-activity/src/github-activity.js"></script>
-                <!-- custom js -->
-                <script type="text/javascript"
-                    src="assets/js/main.js"></script>
-                <script src="https://code.jquery.com/jquery-3.6.0.js"
-                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-                    crossorigin="anonymous">
-                        $('#iframepdf').attr("src", 'https://research-publication.com/amsj/all-issues/vol-9-no-6-2020/amsj2020-n6-62/#elementor-tab-content-8391');
-                    </script>
-                <script src="stocks.js"></script>
+                    </section>
+
+                    <script type="text/javascript"
+                        src="assets/plugins/popper.min.js"></script>
+                    <script type="text/javascript"
+                        src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+                    <script type="text/javascript"
+                        src="assets/plugins/vanilla-rss/dist/rss.global.min.js"></script>
+                    <script type="text/javascript"
+                        src="assets/plugins/dark-mode-switch/dark-mode-switch.min.js"></script>
+                    <!-- github calendar plugin -->
+                    <script type="text/javascript"
+                        src="assets/plugins/github-calendar/dist/github-calendar.min.js"></script>
+                    <!-- github activity plugin -->
+                    <script type="text/javascript"
+                        src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+                    <script type="text/javascript"
+                        src="assets/plugins/github-activity/src/github-activity.js"></script>
+                    <!-- custom js -->
+                    <script type="text/javascript"
+                        src="assets/js/main.js"></script>
+                    <script src="https://code.jquery.com/jquery-3.6.0.js"
+                        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+                        crossorigin="anonymous">
+                            $('#iframepdf').attr("src", 'https://research-publication.com/amsj/all-issues/vol-9-no-6-2020/amsj2020-n6-62/#elementor-tab-content-8391');
+                        </script>
+                    <script src="stocks.js"></script>
 </body>
 
 </html>
